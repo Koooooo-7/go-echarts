@@ -255,6 +255,13 @@ func WithMarkPointNameCoordItemOpts(opt ...opts.MarkPointNameCoordItem) SeriesOp
 	}
 }
 
+// WithAreaStyleOpts
+func WithAreaStyleOpts(opt opts.AreaStyle) SeriesOpts {
+	return func(s *SingleSeries) {
+		s.AreaStyle = &opt
+	}
+}
+
 func (s *SingleSeries) configureSeriesOpts(opts ...SeriesOpts) {
 	for _, opt := range opts {
 		opt(s)
